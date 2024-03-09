@@ -4,12 +4,6 @@ import About from './Components/About';
 import Navbar from './Components/Navbar';
 import TextForm from './Components/TextForm';
 import Alert from './Components/Alert';
-import {
-  Routes,
-  Route,
-  BrowserRouter as Router,
-} from "react-router-dom";
-import PageNotFound from './Components/PageNotFound';
 
 function App() {
 
@@ -41,20 +35,12 @@ function App() {
     }
   }
 
-
   return (
     <div>  
-      <Router>
-        <Navbar title={"TextUtils"} about={"About Us"} mode={mode} toggleMode={toggleMode} />
-        <div style={{height: '50px'}}>
-          <Alert alert = {alert}/>
-        </div>
-        <Routes>
-          <Route path="/" element={<TextForm  heading={"Enter your text here..."} ShowAlert = {ShowAlert} mode= {mode}/>}/>
-          <Route path="/about" element={<About mode= {mode}/>} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-      </Router>
+      <Alert alert = {alert}/>
+      <Navbar title={"TextUtils"} about={"About Us"} mode={mode} toggleMode={toggleMode} />
+      <TextForm heading={"Enter your text here..."} ShowAlert={ShowAlert} mode={mode} />
+      <About mode= {mode}/>
     </div>
   );
 }

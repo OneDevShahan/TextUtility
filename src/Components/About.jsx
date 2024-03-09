@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 
 export default function About(props) {
 
@@ -8,7 +8,7 @@ export default function About(props) {
     }
 
   return (
-    <div className='container my-3' style={myStyle}>
+    <div name="about" className='container my-3' style={myStyle}>
         <h1>About Us</h1>
         <div class="accordion" id="accordionExample">
             <div class="accordion-item" style={myStyle}>
